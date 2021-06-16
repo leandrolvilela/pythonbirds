@@ -11,6 +11,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - Olhos {cls.olhos}'
+
 if __name__ == '__main__':
     renzo = Pessoa(nome='Renzo')
     luciano = Pessoa(renzo, nome='Luciano')
@@ -48,3 +56,5 @@ if __name__ == '__main__':
     #Quando for alterar valores de atributo de Classe tem que alterar pelo nome da classe (exemplo: Pessoa.olhos = 3)
     #Se for alterar por objeto, será criado um mesmo atributo como um atributo de instancia (Exemplo: luciano.olhos = 1)
     #Só utilizar ATRIBUTO DE CLASSE quando o valor for igual para todos os objetos
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
